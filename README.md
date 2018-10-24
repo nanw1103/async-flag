@@ -15,7 +15,6 @@ let result = await flag.get() //result will be 'hello'
 # Error case
 
 ```javascript
-const AsyncFlag = require('async-flag')
 let flag = new AsyncFlag('my-conditiopn')
 
 //Set the error somewhere else
@@ -26,8 +25,6 @@ flag.get().catch(console.error) //prints 'something wrong'
 	
 # Timeout
 ```javascript
-const AsyncFlag = require('async-flag')
-
 let flag = new AsyncFlag('myFlag')
 setTimeout(() => flag.set('hello'), 500)
 
@@ -39,7 +36,6 @@ flag.get(1000).then(data => console.log('expected resolve:', data)).catch(consol
 
 # Reset
 ```javascript
-const AsyncFlag = require('async-flag')
 let flag = new AsyncFlag()
 flag.set('hello')
 assert('hello' === await flag.get())
