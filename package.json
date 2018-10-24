@@ -1,0 +1,27 @@
+{
+  "name": "async-flag",
+  "version": "0.0.1",
+  "description": "Promise based flag for asynchronous condition",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanw1103/async-flag.git"
+  },
+  "keywords": [
+    "async",
+    "flag",
+    "condition",
+    "semaphore",
+    "asynchronous",
+    "async"
+  ],
+  "author": "nanw1103",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanw1103/async-flag/issues"
+  },
+  "homepage": "https://github.com/nanw1103/async-flag#readme"
+}

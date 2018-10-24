@@ -26,7 +26,7 @@ class AsyncFlag {
 		
 		return new Promise((resolve, reject) => {
 			let timer = setTimeout(() => {
-				let msg = 'AsyncFlag timed out: ' + (this.name ? this.name : '(no name)')
+				let msg = 'AsyncFlag timeout: ' + (this.name ? this.name : '(no name)')
 				reject(msg)
 			}, timeout)
 			

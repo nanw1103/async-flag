@@ -1,7 +1,6 @@
 'use strict'
 const assert = require('assert')
 const AsyncFlag = require('./index.js')
-const delay = timeout => new Promise(resolve => setTimeout(resolve, timeout));
 
 describe('delay', function() {
 	it('Basic', async function() {
@@ -15,7 +14,7 @@ describe('delay', function() {
 		let flag = new AsyncFlag()	
 		setTimeout(() => flag.error('XX'), 10)	
 		try {
-			let result = await flag.get()
+			await flag.get()
 			assert(false)
 		} catch (e) {
 			assert(e === 'XX')
@@ -26,7 +25,7 @@ describe('delay', function() {
 		let flag = new AsyncFlag('myFlag')	
 		setTimeout(() => flag.set('hello'), 1000)
 		try {
-			let result = await flag.get(10)
+			await flag.get(10)
 			assert(false)
 		} catch (e) {
 			assert(e.toString().indexOf('myFlag') > 0)
