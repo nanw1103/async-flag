@@ -16,8 +16,8 @@ setTimeout(() => flag.set('hello'), 10)
 //wait for the flag
 let result = await flag.get() //result will be 'hello'
 ```
-# Error case
 
+# Error case
 ```javascript
 let flag = new AsyncFlag('my-conditiopn')
 
@@ -34,8 +34,8 @@ setTimeout(() => flag.set('hello'), 500)
 
 flag.get(10).catch(console.log)		//expected timeout, prints: "AsyncFlag timeout: myFlag"
 flag.get(100).catch(console.log)	//expected timeout, prints: "AsyncFlag timeout: myFlag"
-flag.get(1000).then(data => console.log('expected resolve:', data)).catch(console.error)
-flag.get(1000).then(data => console.log('expected resolve:', data)).catch(console.error)
+flag.get(1000).then(console.log).catch(console.error)	//expected resolve, prints "hello"
+flag.get(1000).then(console.log).catch(console.error)	//expected resolve, prints "hello"
 ```
 
 # Reset
@@ -43,7 +43,7 @@ flag.get(1000).then(data => console.log('expected resolve:', data)).catch(consol
 let flag = new AsyncFlag()
 flag.set('hello')
 assert('hello' === await flag.get())
-flag.reset()
+flag.reset()  //reset the promise.
 flag.set('hello3')
 assert('hello3' === await flag.get())
 ```
