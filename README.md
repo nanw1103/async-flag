@@ -1,5 +1,9 @@
 # async-flag
-Promise based flag for asynchronous condition
+Promise based flag for asynchronous condition, for javascript/Nodejs
+
+```
+npm i async-flag
+```
 
 # Basic
 ```javascript
@@ -22,7 +26,7 @@ setTimeout(() => flag.error('something wrong'), 10)
 
 flag.get().catch(console.error) //prints 'something wrong'
 ```
-	
+
 # Timeout
 ```javascript
 let flag = new AsyncFlag('myFlag')
